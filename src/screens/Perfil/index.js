@@ -77,7 +77,9 @@ export default function Perfil(props) {
                 fontSize: 25,
                 color: '#007bff'
             }} />
-            {avatar.length > 0 && <Image source={{ uri: avatar }} style={{ width: '100%', height: '100%' }} />}
+            {avatar.length > 0 && <Image source={{ uri: avatar }} style={{
+                borderRadius: 50
+            }} />}
             <Button texto='Voltar' onPress={() => props.navigation.goBack()}></Button>
             <Button texto='Image' onPress={() => imagem()}></Button>
         </View>
