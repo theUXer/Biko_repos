@@ -1,9 +1,14 @@
 import React from 'react';
 import { View, TextInput } from 'react-native';
-import styles from './styles'
+import styles from '../Login/styles'
 import Button from '../../components/Button'
 
-<View style={styles.container}>
-    <TextInput>Nome</TextInput>
+export default function Cadastro() {
+    return (
+        <View style={styles.container}>
+            <TextInput>Nome</TextInput>
 
-    <Button></Button></View>
+            <Button>Cadastrar</Button>
+        </View>
+    )
+}
