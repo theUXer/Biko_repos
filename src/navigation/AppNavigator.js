@@ -5,7 +5,7 @@ import { createStackNavigator } from 'react-navigation-stack'
 import LoginScreen from '../screens/Login'
 import HomeScreen from '../screens/Home'
 import CadastroScreen from '../screens/Cadastro'
-
+import PerfilScreen from '../screens/Perfil'
 const AppNavigator = createStackNavigator({
     Login: {
         screen: LoginScreen,
@@ -24,6 +24,12 @@ const AppNavigator = createStackNavigator({
     },
     Cadastro: {
         screen: CadastroScreen,
+        navigationOptions: {
+            header: null
+        }
+    },
+    Perfil: {
+        screen: PerfilScreen,
         navigationOptions: {
             header: null
         }
