@@ -3,4 +3,7 @@ import { View, TextInput } from 'react-native';
 import styles from './styles'
 import Button from '../../components/Button'
 
-<View> <Button></Button></View>
+<View>
+    <TextInput></TextInput>
+
+    <Button></Button></View>
