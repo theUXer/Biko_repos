@@ -23,7 +23,10 @@ const AppNavigator = createStackNavigator({
         }
     },
     Cadastro: {
-        screen: CadastroScreen
+        screen: CadastroScreen,
+        navigationOptions: {
+            header: null
+        }
     }
 })
 
