@@ -1,12 +1,14 @@
 import React from 'react'
 import { createAppContainer } from 'react-navigation'
 import { createStackNavigator } from 'react-navigation-stack'
+import { createDrawerNavigator } from 'react-navigation-drawer'
 
 import LoginScreen from '../screens/Login'
 import HomeScreen from '../screens/Home'
 import CadastroScreen from '../screens/Cadastro'
 import PerfilScreen from '../screens/Perfil'
-const AppNavigator = createStackNavigator({
+
+const AppNavigator = createDrawerNavigator({
     Login: {
         screen: LoginScreen,
         navigationOptions: {
