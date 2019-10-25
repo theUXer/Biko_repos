@@ -12,36 +12,12 @@ export default function Cadastro(props) {
                 
                 <Input placeholder='Digite seu nome' />
 
+                <Input placeholder='Digite seu sobrenome' />
 
-            
-                <TextInput placeholder="Digite seu nome" style={{
-                    borderBottomWidth: 1,
-                    borderBottomColor: '#dbdbdb',
-                    fontSize: 25,
-                    color: '#007bff',
-                    width: 240,
-                }}></TextInput>
-                <TextInput placeholder="Digite seu sobrenome" style={{
-                    width: 250,
-                    borderBottomWidth: 1,
-                    borderBottomColor: '#dbdbdb',
-                    fontSize: 25,
-                    color: '#007bff'
-                }}></TextInput>
-                <TextInput placeholder="Digite seu CPF" style={{
-                    borderBottomWidth: 1,
-                    borderBottomColor: '#dbdbdb',
-                    color: '#007bff',
-                    fontSize: 25,
-                    width: 250,
-                }}></TextInput>
-                <TextInput placeholder="Digite o tipo de serviço" style={{
-                    borderBottomWidth: 1,
-                    borderBottomColor: '#dbdbdb',
-                    fontSize: 25,
-                    color: '#007bff',
-                    width: 255
-                }}></TextInput>
+                <Input placeholder='Digite seu CPF' />
+
+                <Input placeholder='Digite o tipo do serviço' />
+
                 <View style={{ flexDirection: "row" }}>
                     <Button texto='Cadastrar'></Button>
                     <Button texto='Voltar' onPress={() => props.navigation.goBack()}></Button>

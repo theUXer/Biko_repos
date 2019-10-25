@@ -8,8 +8,8 @@ export default function Input(props) {
             borderBottomWidth: 1,
             borderBottomColor: '#dbdbdb',
             fontSize: 25,
-            color: '#007bff',
-            width: 250,
+            color: '#858483',
+            width: 270,
         }
     }
     />
