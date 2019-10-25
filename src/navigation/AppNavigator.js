@@ -6,6 +6,7 @@ import LoginScreen from '../screens/Login'
 import HomeScreen from '../screens/Home'
 import CadastroScreen from '../screens/Cadastro'
 import PerfilScreen from '../screens/Perfil'
+import InfoScreen from '../screens/Info'
 const AppNavigator = createStackNavigator({
     Login: {
         screen: LoginScreen,
@@ -31,6 +32,9 @@ const AppNavigator = createStackNavigator({
         navigationOptions: {
             header: null
         }
+    },
+    Info: {
+        screen: InfoScreen
     }
 })
 
