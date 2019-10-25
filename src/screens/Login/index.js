@@ -10,18 +10,20 @@ export default function Login(props) {
 
                 <TextInput placeholder='Digite seu email' style={{
                     borderBottomWidth: 1,
-                    borderBottomColor: '#dbdbdb',
+                    borderBottomColor: '#858483',
                     fontSize: 25,
-                }} placeholderTextColor='#dbdbdb'></TextInput>
+                }} placeholderTextColor='#858483'></TextInput>
                 <TextInput placeholder='Digite sua senha' style={{
                     borderBottomWidth: 1,
-                    borderBottomColor: '#dbdbdb',
+                    borderBottomColor: '#858483',
                     fontSize: 25,
-                }} placeholderTextColor='#dbdbdb'></TextInput>
+                }} placeholderTextColor='#858483'></TextInput>
 
                 <View style={{ flexDirection: "row" }}>
                     <Button texto='Login' onPress={() => props.navigation.navigate('Home')} />
+
                     <Button texto='Cadastre-se' onPress={() => props.navigation.navigate('Cadastro')} />
+
                     <Button texto='Perfil' onPress={() => props.navigation.navigate('Perfil')} />
                 </View>
 

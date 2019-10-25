@@ -1,21 +1,22 @@
 import React from 'react'
 import { TouchableOpacity, Text } from 'react-native'
-import { LinearGradient } from 'expo-linear-gradient'
+// import { LinearGradient } from 'expo-linear-gradient'
 
 export default function Button(props) {
     return (
-        <TouchableOpacity onPress={props.onPress}>
-            <LinearGradient
-                colors={['#9bed98', '#000']}
-                style={{ width: 130, padding: 15, alignItems: 'center', borderRadius: 13, marginRight: 5 }}>
-                <Text style={{
-                    backgroundColor: 'transparent',
-                    fontSize: 15,
-                    color: '#dbdbdb'
-                }}>
-                    {props.texto}
-                </Text>
-            </LinearGradient>
+        <TouchableOpacity
+            style={{
+                backgroundColor: '#058',
+                borderRadius: 50,
+                width: 100,
+                height: 50,
+                marginLeft: 5,
+                justifyContent: 'center',
+                alignItems: 'center'
+
+            }}
+            onPress={props.onPress}>
+            <Text style={{ color: '#f0ebdf' }}>{props.texto}</Text>
         </TouchableOpacity>
     )
 }

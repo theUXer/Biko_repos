@@ -3,7 +3,7 @@ import { AppRegistry, Image, StatusBar } from 'react-native';
 import { Container, Header, Content, Card, CardItem, Thumbnail, Text, Button, Icon, Left, Body, Right, List, Profile } from 'native-base';
 
 
-export default function Home() {
+export default function Home(props) {
   return (
     <>
       <Container>
@@ -32,7 +32,7 @@ export default function Home() {
               return (
                 <ListItem
                   button
-                  onPress={() => this.props.navigation.navigate(data)}>
+                  onPress={() => props.navigation.navigate(data)}>
                   <Text>{data}</Text>
                 </ListItem>
               );
