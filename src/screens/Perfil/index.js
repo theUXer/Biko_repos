@@ -5,7 +5,7 @@ import Button from '../../components/Button'
 import Constants from 'expo-constants'
 import * as Permissions from 'expo-permissions';
 import * as ImagePicker from 'expo-image-picker';
-
+import Input from '../../components/Input'
 export default function Perfil(props) {
     const [avatar, setAvatar] = useState('')
 
@@ -63,22 +63,16 @@ export default function Perfil(props) {
 
     return (
         <View style={styles.container}>
-            {avatar.length > 0 && <Image source={{ uri: avatar }} style={{ width: 100, height: 100, borderRadius: 50 }} />}
+            {avatar.length > 0 && <Image source={{ uri: avatar }} style={{
+                width: 150,
+                height: 150,
+                borderRadius: 75
+            }}
+            />}
             <View style={{ flex: 0.4, alignItems: 'center', justifyContent: 'space-evenly' }}>
-                <TextInput placeholder="Nome completo" style={{
-                    width: 250,
-                    borderBottomWidth: 1,
-                    borderBottomColor: '#dbdbdb',
-                    fontSize: 25,
-                    color: '#007bff'
-                }} />
-                <TextInput placeholder="Digite seu sobrenome" style={{
-                    width: 250,
-                    borderBottomWidth: 1,
-                    borderBottomColor: '#dbdbdb',
-                    fontSize: 25,
-                    color: '#007bff'
-                }} />
+                <Input placeholder="Nome completo" />
+                <Input placeholder="Digite seu sobrenome" />
+                <Input placeholder="Mais informações" />
                 <View style={{ flexDirection: "row" }}>
                     <Button texto='Voltar' onPress={() => props.navigation.goBack()}></Button>
                     <Button texto='Imagem' onPress={() => imagem()}></Button>
