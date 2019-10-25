@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { View, TextInput, Alert, Image } from 'react-native';
+import { View, TextInput, Alert, Image, Text } from 'react-native';
 import styles from '../Login/styles'
 import Button from '../../components/Button'
 import Constants from 'expo-constants'
@@ -34,7 +34,6 @@ export default function Perfil(props) {
         setAvatar(result.uri)
     }
     async function pickImageWithCamera() {
-        console.log('aqui')
         var result = await ImagePicker.launchCameraAsync({
             mediaTypes: ImagePicker.MediaTypeOptions.All,
             allowsEditing: true,
@@ -52,6 +51,7 @@ export default function Perfil(props) {
     }
 
     function imagem() {
+        console.log(avatar)
         Alert.alert(
             'Mensagem',
             'Você deseja utilizar a câmera ou a galeria?',
@@ -63,26 +63,28 @@ export default function Perfil(props) {
 
     return (
         <View style={styles.container}>
-            <TextInput placeholder="Nome completo" style={{
-                width: 250,
-                borderBottomWidth: 1,
-                borderBottomColor: '#dbdbdb',
-                fontSize: 25,
-                color: '#007bff'
-            }} />
-            <TextInput placeholder="Digite seu sobrenome" style={{
-                width: 250,
-                borderBottomWidth: 1,
-                borderBottomColor: '#dbdbdb',
-                fontSize: 25,
-                color: '#007bff'
-            }} />
-            {avatar.length > 0 && <Image source={{ uri: avatar }} style={{
-                borderRadius: 100
-            }} />}
+            {avatar.length > 0 && <Image source={{ uri: avatar }} style={{ width: 100, height: 100, borderRadius: 50 }} />}
+            <View style={{ flex: 0.4, alignItems: 'center', justifyContent: 'space-evenly' }}>
+                <TextInput placeholder="Nome completo" style={{
+                    width: 250,
+                    borderBottomWidth: 1,
+                    borderBottomColor: '#dbdbdb',
+                    fontSize: 25,
+                    color: '#007bff'
+                }} />
+                <TextInput placeholder="Digite seu sobrenome" style={{
+                    width: 250,
+                    borderBottomWidth: 1,
+                    borderBottomColor: '#dbdbdb',
+                    fontSize: 25,
+                    color: '#007bff'
+                }} />
+                <View style={{ flexDirection: "row" }}>
+                    <Button texto='Voltar' onPress={() => props.navigation.goBack()}></Button>
+                    <Button texto='Imagem' onPress={() => imagem()}></Button>
+                </View>
 
-            <Button texto='Voltar' onPress={() => props.navigation.goBack()}></Button>
-            <Button texto='Imagem' onPress={() => imagem()}></Button>
+            </View>
         </View>
     )
 }
