@@ -15,9 +15,7 @@ export default function Login(props) {
 
                 <View style={{ flexDirection: "row" }}>
                     <Button texto='Login' onPress={() => props.navigation.navigate('Home')} />
-
                     <Button texto='Cadastre-se' onPress={() => props.navigation.navigate('Cadastro')} />
-
                     <Button texto='Perfil' onPress={() => props.navigation.navigate('Perfil')} />
                 </View>
 

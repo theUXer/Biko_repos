@@ -7,8 +7,13 @@ import LoginScreen from '../screens/Login'
 import HomeScreen from '../screens/Home'
 import CadastroScreen from '../screens/Cadastro'
 import PerfilScreen from '../screens/Perfil'
+<<<<<<< HEAD
 
 const AppNavigator = createDrawerNavigator({
+=======
+import InfoScreen from '../screens/Info'
+const AppNavigator = createStackNavigator({
+>>>>>>> c563d43d73ec2ff42fda97ef1a1dbf60856d9935
     Login: {
         screen: LoginScreen,
         navigationOptions: {
@@ -33,6 +38,9 @@ const AppNavigator = createDrawerNavigator({
         navigationOptions: {
             header: null
         }
+    },
+    Info: {
+        screen: InfoScreen
     }
 })
 
