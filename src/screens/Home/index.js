@@ -9,8 +9,8 @@ import baba from '../../assets/baba.jpg'
 import bebe from '../../assets/bebe.jpg'
 import zuleika from '../../assets/zuleika.jpg'
 import carro from '../../assets/carro.jpg'
-
-
+import emerson from '../../assets/emerson.jpg'
+import predio from '../../assets/predio.jpg'
 
 
 export default function Home(props) {
@@ -102,6 +102,42 @@ export default function Home(props) {
           </CardItem>
           <CardItem cardBody>
             <Image source={Arroz} style={{ height: 200, width: null, flex: 1 }} />
+          </CardItem>
+          <CardItem>
+            <Left>
+              <Button transparent >
+                <Icon active name="thumbs-up" style={{ color: '#ab0993' }} />
+                <Text style={{ color: '#ab0993' }}>103 Likes</Text>
+              </Button>
+            </Left>
+            <Body>
+              <Button transparent>
+                <Icon active name="chatbubbles" style={{ color: '#ab0993' }} />
+                <Text style={{ color: '#ab0993' }}>Contact</Text>
+              </Button>
+            </Body>
+            <Right>
+              <Button transparent>
+                <Icon active name="heart" style={{ color: '#ab0993' }} />
+                <Text style={{ color: '#ab0993' }}>Favorite</Text>
+              </Button>
+            </Right>
+          </CardItem>
+        </Card>
+
+
+        <Card>
+          <CardItem>
+            <Left>
+              <Thumbnail source={emerson} />
+              <Body>
+                <Text>Emerson Silveira</Text>
+                <Text note>Empreiteiro</Text>
+              </Body>
+            </Left>
+          </CardItem>
+          <CardItem cardBody>
+            <Image source={predio} style={{ height: 200, width: null, flex: 1 }} />
           </CardItem>
           <CardItem>
             <Left>
