@@ -1,16 +1,15 @@
 import React from 'react';
-import { AppRegistry, Image, StatusBar } from 'react-native';
-import {
-  Container, Header, Content, Card, CardItem, Thumbnail, Text,
-  Button, Icon, Left, Body, Right, List, Profile, /*ScrollView*/
-} from 'native-base';
+import { Image } from 'react-native';
+import { Card, CardItem, Thumbnail, Text, Button, Icon, Left, Body, Right } from 'native-base';
+import { ScrollView } from 'react-native-gesture-handler';
+
 import Arroz from '../../assets/eletricista.jpg'
 import joao from '../../assets/joao.jpg'
 import baba from '../../assets/baba.jpg'
 import bebe from '../../assets/bebe.jpg'
 import zuleika from '../../assets/zuleika.jpg'
 import carro from '../../assets/carro.jpg'
-import { FlatList, ScrollView } from 'react-native-gesture-handler';
+
 
 
 
