@@ -13,7 +13,7 @@
       "barStyle": "light-content"
     },
     "version": "1.0.0",
-    "orientation": "portrait",
+    "orientation": "",
     "icon": "./src/assets/logo.png",
     "splash": {
       "image": "./src/assets/splash.png",
