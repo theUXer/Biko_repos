@@ -143,7 +143,7 @@ export default function Home(props) {
             <Left>
               <Button transparent >
                 <Icon active name="thumbs-up" style={{ color: '#ab0993' }} />
-                <Text style={{ color: '#ab0993' }}>103 Likes</Text>
+                <Text style={{ color: '#ab0993' }}>81 Likes</Text>
               </Button>
             </Left>
             <Body>
