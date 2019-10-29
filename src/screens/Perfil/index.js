@@ -76,6 +76,7 @@ export default function Perfil(props) {
                 <View style={{ flexDirection: "row" }}>
                     <Button texto='Voltar' onPress={() => props.navigation.goBack()}></Button>
                     <Button texto='Imagem' onPress={() => imagem()}></Button>
+                    <Button texto='Salvar' />
                 </View>
 
             </View>

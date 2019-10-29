@@ -7,24 +7,22 @@ import LoginScreen from '../screens/Login'
 import HomeScreen from '../screens/Home'
 import CadastroScreen from '../screens/Cadastro'
 import PerfilScreen from '../screens/Perfil'
-<<<<<<< HEAD
-
-const AppNavigator = createDrawerNavigator({
-=======
 import InfoScreen from '../screens/Info'
+
 const AppNavigator = createStackNavigator({
->>>>>>> c563d43d73ec2ff42fda97ef1a1dbf60856d9935
     Login: {
         screen: LoginScreen,
         navigationOptions: {
+            title: 'Bem vindo à Biko!',
             header: null
         }
     },
     Home: {
         screen: HomeScreen,
         navigationOptions: {
-            title: 'Página Inicial',
-            header: null
+            headerTitle: 'Página Inicial',
+            headerStyle: { backgroundColor: '#fff', height: 25 },
+            headerTintColor: '#ab0993',
         }
     },
     Cadastro: {

@@ -2,13 +2,13 @@ import React from 'react';
 import { View, TextInput, Image } from 'react-native';
 import styles from './styles'
 import Button from '../../components/Button'
-import Logo from '../../assets/logo.jpg'
+import Logo from '../../assets/logo.png'
 
 export default function Login(props) {
     return (
         <View style={styles.container}>
-            <Image source={Logo} style={{ width: 200, height: 200, borderRadius: 50 }} />
-            <View style={{ flex: 0.7, alignItems: 'center', justifyContent: 'space-evenly' }}>
+            <Image source={Logo} style={{ width: 200, height: 200, borderRadius: 100 }} />
+            <View style={{ flex: 0.5, alignItems: 'center', justifyContent: 'space-evenly' }}>
                 <TextInput placeholder='Digite seu email' style={{
                     borderBottomWidth: 1,
                     borderBottomColor: '#858483',
