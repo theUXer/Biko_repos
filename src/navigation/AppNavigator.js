@@ -19,11 +19,11 @@ const AppNavigator = createStackNavigator({
     },
     Home: {
         screen: HomeScreen,
-        navigationOptions: {
-            headerTitle: 'Página Inicial',
+        navigationOptions: () => ({
+            title: 'Página Inicial',
             headerStyle: { backgroundColor: '#fff', height: 25 },
             headerTintColor: '#ab0993',
-        }
+        })
     },
     Cadastro: {
         screen: CadastroScreen,

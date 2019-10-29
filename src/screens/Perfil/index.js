@@ -6,6 +6,7 @@ import Constants from 'expo-constants'
 import * as Permissions from 'expo-permissions';
 import * as ImagePicker from 'expo-image-picker';
 import Input from '../../components/Input'
+import perfil from '../../assets/perfil.jpg'
 export default function Perfil(props) {
     const [avatar, setAvatar] = useState('')
 
