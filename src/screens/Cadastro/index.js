@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { KeyboardAvoidingView, View, TextInput, TouchableOpacity, Alert, Image, Text } from 'react-native'
-
+import { Dropdown } from 'react-native-material-dropdown';
 import styles from './styles'
 
 import { Background } from '../../components/Background'
@@ -16,6 +16,7 @@ import perfil from '../../assets/perfil.jpg'
 
 export default function Cadastro(props) {
     const [avatar, setAvatar] = useState('')
+    const [accountType, setAccountType] = useState('')
 
     useEffect(() => {
         getPermissions()
@@ -68,40 +69,69 @@ export default function Cadastro(props) {
             { text: 'Galeria', onPress: () => pickImage() }]
         )
     }
-    /*export default function Cadastro(props) {*/
-        return (
-            <Background>
-                <View style={styles.viewImage}>
-                    <Image
-                        source={avatar ? { uri: avatar } : perfil}
-                        style={styles.image}
+    let data = [{
+        value: 'Empregado',
+    }, {
+        value: 'Empregador',
+    }]
+
+    let Serviço = [{
+        value: 'Serviço de alta ',
+    }, {
+        value: 'baixa',
+    }, {
+        value: 'Media'
+    }]
+
+    return (
+        <Background>
+            <View style={styles.viewImage}>
+                <Image
+                    source={avatar ? { uri: avatar } : perfil}
+                    style={styles.image}
+                />
+                <TouchableOpacity style={styles.circle} onPress={() => imagem()}>
+                    <Plus name='plus' size={20} color='#fff' />
+                </TouchableOpacity>
+            </View>
+
+            <KeyboardAvoidingView style={styles.content}>
+
+
+                <Input placeholder='Digite seu nome' />
+
+                <Input placeholder='Digite seu sobrenome' />
+
+                <Input placeholder='Digite seu CPF' />
+
+                <Dropdown
+                    label="Tipo de conta"
+                    baseColor="#858483"
+                    data={data}
+                    containerStyle={{ width: '80%' }}
+                    onChangeText={text => setAccountType(text)}
+                />
+
+                {accountType === 'Empregado' && (
+                    <Dropdown
+                        label="Serviço"
+                        data={Serviço}
+                        baseColor="#858483"
+                        containerStyle={{ width: '80%' }}
                     />
-                    <TouchableOpacity style={styles.circle} onPress={() => imagem()}>
-                        <Plus name='plus' size={20} color='#fff' />
-                    </TouchableOpacity>
+
+                )}
+
+                <View style={{ flexDirection: "row" }}>
+                    <Button
+                        texto='Cadastrar'
+                        style={styles.buttonRight} />
+                    <Button
+                        texto='Voltar'
+                        style={styles.buttonLeft}
+                        onPress={() => props.navigation.goBack()} />
                 </View>
-                
-                <KeyboardAvoidingView style={styles.content}>
-
-
-                    <Input placeholder='Digite seu nome' />
-
-                    <Input placeholder='Digite seu sobrenome' />
-
-                    <Input placeholder='Digite seu CPF' />
-
-                    <Input placeholder='Digite o tipo do serviço' />
-
-                    <View style={{ flexDirection: "row" }}>
-                        <Button
-                            texto='Cadastrar'
-                            style={styles.buttonRight} />
-                        <Button
-                            texto='Voltar'
-                            style={styles.buttonLeft}
-                            onPress={() => props.navigation.goBack()} />
-                    </View>
-                </KeyboardAvoidingView>
-            </Background>
-        )
-    }
+            </KeyboardAvoidingView>
+        </Background>
+    )
+}
