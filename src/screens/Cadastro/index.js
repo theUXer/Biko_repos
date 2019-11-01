@@ -75,13 +75,35 @@ export default function Cadastro(props) {
         value: 'Empregador',
     }]
 
-    let Serviço = [{
-        value: 'Serviço de alta ',
+    let Sexo = [{
+        value: 'Masculino',
     }, {
-        value: 'baixa',
+        value: 'Feminino',
     }, {
-        value: 'Media'
+        value: 'Outro'
+    }, {
+        value: 'Prefiro não informar'
     }]
+
+    let Serviço = [{
+        value: 'Babá',
+    }, {
+        value: 'Eletricista ',
+    }, {
+        value: 'Limpador(a) de piscina',
+    }, {
+        value: 'Motorista'
+    }, {
+        value: 'Empreiteiro(a) ',
+    }, {
+        value: 'Pintor(a) ',
+    }, {
+        value: 'Encanador(a)',
+    }, {
+        value: 'Mecânico(a) ',
+    }, {
+        value: 'Faxineiro(a)',
+    },]
 
     return (
         <Background>
@@ -103,7 +125,13 @@ export default function Cadastro(props) {
                 <Input placeholder='Digite seu sobrenome' />
 
                 <Input placeholder='Digite seu CPF' />
-
+                <Dropdown
+                    label="Sexo"
+                    baseColor="#858483"
+                    data={data}
+                    containerStyle={{ width: '80%' }}
+                    onChangeText={text => setAccountType(text)}
+                />
                 <Dropdown
                     label="Tipo de conta"
                     baseColor="#858483"
