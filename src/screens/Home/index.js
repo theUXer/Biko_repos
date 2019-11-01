@@ -1,18 +1,22 @@
-import React, {useState} from 'react';
+import React, { useState, Component } from 'react';
 import styles from './styles';
 
 import { Image, TouchableOpacity, ScrollView } from 'react-native';
 
 import { bikoColor } from '../../helpers/Colors'
 
-import { Card, CardItem, Thumbnail, Text, Button, Icon, Left, Body, Right } from 'native-base';
+import { Card, CardItem, Thumbnail, Text, Button, Icon, Left, Body, Right, Input, } from 'native-base';
 
 import { Baba, Bebe, Carro, Eletricista, Emerson, Joao, Predio, Zuleika } from '../../helpers/Images'
+import { TextInput } from 'react-native-gesture-handler';
+
 
 export default function Home(props) {
-  
   return (
     <>
+
+    <TextInput placeholder='    Pesquise aqui...' style={{ borderRadius: 30 , height: 50, width: 390, alignSelf: 'center', backgroundColor: bikoColor.primary }}></TextInput>
+
       <ScrollView>
         <Card>
           <CardItem>

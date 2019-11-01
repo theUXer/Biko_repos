@@ -90,7 +90,7 @@ export default function Cadastro(props) {
 
                     <Input placeholder='Digite seu CPF' />
 
-                    <Input placeholder='Digite o tipo do serviço' />
+                    
 
                     <View style={{ flexDirection: "row" }}>
                         <Button
