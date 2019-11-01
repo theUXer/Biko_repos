@@ -3,7 +3,7 @@ import { KeyboardAvoidingView, View, TouchableOpacity, TextInput, Alert, Image, 
 
 import styles from './styes'
 
-import Background from '../../components/Background'
+import { Background } from '../../components/Background'
 import Button from '../../components/Button'
 import Input from '../../components/Input'
 

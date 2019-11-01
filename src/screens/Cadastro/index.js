@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { KeyboardAvoidingView, View, TextInput, TouchableOpacity, Alert, Image, Text } from 'react-native'
 
 import styles from './styles'
@@ -14,7 +14,7 @@ import * as ImagePicker from 'expo-image-picker';
 import Plus from 'react-native-vector-icons/Feather'
 import perfil from '../../assets/perfil.jpg'
 
-export default function Perfil(props) {
+export default function Cadastro(props) {
     const [avatar, setAvatar] = useState('')
 
     useEffect(() => {
@@ -68,7 +68,7 @@ export default function Perfil(props) {
             { text: 'Galeria', onPress: () => pickImage() }]
         )
     }
-    export default function Cadastro(props) {
+    /*export default function Cadastro(props) {*/
         return (
             <Background>
                 <View style={styles.viewImage}>
@@ -80,20 +80,7 @@ export default function Perfil(props) {
                         <Plus name='plus' size={20} color='#fff' />
                     </TouchableOpacity>
                 </View>
-                <KeyboardAvoidingView style={{ flex: 0.7, width: '100%', alignItems: 'center', justifyContent: 'space-evenly' }}>
-                    <Input placeholder="Nome completo" />
-                    <Input placeholder="Digite seu sobrenome" />
-                    <Input placeholder="Mais informações" />
-                    <View style={{ flexDirection: "row" }}>
-                        <Button
-                            texto='Salvar'
-                            style={styles.buttonRight} />
-                        <Button
-                            texto='Voltar'
-                            style={styles.buttonLeft}
-                            onPress={() => props.navigation.goBack()} />
-                    </View>
-                </KeyboardAvoidingView>
+                
                 <KeyboardAvoidingView style={styles.content}>
 
 
@@ -118,4 +105,3 @@ export default function Perfil(props) {
             </Background>
         )
     }
-}
