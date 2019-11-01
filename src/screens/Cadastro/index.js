@@ -128,7 +128,7 @@ export default function Cadastro(props) {
                 <Dropdown
                     label="Sexo"
                     baseColor="#858483"
-                    data={data}
+                    data={Sexo}
                     containerStyle={{ width: '80%' }}
                     onChangeText={text => setAccountType(text)}
                 />
