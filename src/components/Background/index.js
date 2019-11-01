@@ -1,15 +1,10 @@
 import React from 'react'
 import { View } from 'react-native'
+import styled from 'styled-components/native'
 
-export default function Background({children}, ...props ) {
-    return (
-        <View 
-            style={{ 
-                flex: 1,
-                alignItems: 'center',
-                backgroundColor: '#fff',
-                justifyContent: 'center'}} >
-            {children}
-        </View>
-    )
-}
+export const Background = styled.View`
+    flex: 1;
+    align-items: center;
+    background-color: #fff;
+    justify-content: center;
+`

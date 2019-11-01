@@ -1,7 +1,7 @@
 import React from 'react';
 import { KeyboardAvoidingView, Image, View } from 'react-native';
 
-import Background from '../../components/Background'
+import { Background } from '../../components/Background'
 import Button from '../../components/Button'
 import Input from '../../components/Input'
 import Link from '../../components/Link'
