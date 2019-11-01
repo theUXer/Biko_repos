@@ -1,4 +1,5 @@
 import React from 'react'
+
 import { createAppContainer } from 'react-navigation'
 import { createStackNavigator } from 'react-navigation-stack'
 import { createDrawerNavigator } from 'react-navigation-drawer'
@@ -13,17 +14,19 @@ const AppNavigator = createStackNavigator({
     Login: {
         screen: LoginScreen,
         navigationOptions: {
-            title: 'Bem vindo à Biko!',
             header: null
         }
     },
     Home: {
         screen: HomeScreen,
-        navigationOptions: () => ({
-            title: 'Página Inicial',
-            headerStyle: { backgroundColor: '#fff', height: 25 },
+        navigationOptions: { 
+            title: 'Home',
+            headerStyle: {
+                paddingVertical: '6%',
+                backgroundColor: '#fff'
+            },
             headerTintColor: '#ab0993',
-        })
+        }
     },
     Cadastro: {
         screen: CadastroScreen,
@@ -40,6 +43,11 @@ const AppNavigator = createStackNavigator({
     Info: {
         screen: InfoScreen
     }
-})
+},
+{
+  initialRouteName: 'Login'
+}
+    
+)
 
 export default createAppContainer(AppNavigator)

@@ -1,12 +1,19 @@
 import React, { useState, useEffect } from 'react';
-import { View, TextInput, Alert, Image, Text } from 'react-native';
-import styles from '../Login/styles'
+import { KeyboardAvoidingView, View, TouchableOpacity, TextInput, Alert, Image, Text } from 'react-native';
+
+import styles from './styes'
+
+import Background from '../../components/Background'
 import Button from '../../components/Button'
+import Input from '../../components/Input'
+
 import Constants from 'expo-constants'
 import * as Permissions from 'expo-permissions';
 import * as ImagePicker from 'expo-image-picker';
-import Input from '../../components/Input'
+
+import Plus from 'react-native-vector-icons/Feather'
 import perfil from '../../assets/perfil.jpg'
+
 export default function Perfil(props) {
     const [avatar, setAvatar] = useState('')
 
@@ -63,24 +70,31 @@ export default function Perfil(props) {
     }
 
     return (
-        <View style={styles.container}>
-            {avatar.length > 0 && <Image source={{ uri: avatar }} style={{
-                width: 150,
-                height: 150,
-                borderRadius: 75
-            }}
-            />}
-            <View style={{ flex: 0.4, alignItems: 'center', justifyContent: 'space-evenly' }}>
+        <Background>
+            <View style={styles.viewImage}> 
+                <Image 
+                    source={avatar ? { uri: avatar } : perfil } 
+                    style={styles.image}
+                />
+                <TouchableOpacity style={styles.circle} onPress={() => imagem()}>
+                    <Plus name='plus' size={20} color='#fff' />
+                </TouchableOpacity>
+            </View>
+            <KeyboardAvoidingView style={{ flex: 0.7, width: '100%', alignItems: 'center', justifyContent: 'space-evenly' }}>
                 <Input placeholder="Nome completo" />
                 <Input placeholder="Digite seu sobrenome" />
                 <Input placeholder="Mais informações" />
                 <View style={{ flexDirection: "row" }}>
-                    <Button texto='Voltar' onPress={() => props.navigation.goBack()}></Button>
-                    <Button texto='Imagem' onPress={() => imagem()}></Button>
-                    <Button texto='Salvar' />
+                <Button 
+                    texto='Salvar' 
+                    style={styles.buttonRight}  />
+                <Button 
+                    texto='Voltar'
+                    style={styles.buttonLeft}  
+                    onPress={() => props.navigation.goBack()} />
                 </View>
 
-            </View>
-        </View>
+            </KeyboardAvoidingView>
+        </Background>
     )
 }

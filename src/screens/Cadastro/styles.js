@@ -9,16 +9,11 @@ const styles = StyleSheet.create({
         borderTopLeftRadius: 0,
         borderBottomLeftRadius: 0
     },
-    keyboard: {
+    content: {
         flexGrow: 0.5, 
         width: '100%', 
-        alignItems: 'center',
+        alignItems: 'center', 
         justifyContent: 'space-evenly'
-    },
-    image: {
-        width: 200,
-        height: 200, 
-        borderRadius: 100
     }
 });
 

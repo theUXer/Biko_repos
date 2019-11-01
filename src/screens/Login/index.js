@@ -1,32 +1,36 @@
 import React from 'react';
-import { View, TextInput, Image } from 'react-native';
-import styles from './styles'
+import { KeyboardAvoidingView, Image, View } from 'react-native';
+
+import Background from '../../components/Background'
 import Button from '../../components/Button'
-import Logo from '../../assets/logo.png'
+import Input from '../../components/Input'
+import Link from '../../components/Link'
+import { Logo } from '../../helpers/Images'
+
+import styles from './styles'
 
 export default function Login(props) {
     return (
-        <View style={styles.container}>
-            <Image source={Logo} style={{ width: 200, height: 200, borderRadius: 100 }} />
-            <View style={{ flex: 0.5, alignItems: 'center', justifyContent: 'space-evenly' }}>
-                <TextInput placeholder='Digite seu email' style={{
-                    borderBottomWidth: 1,
-                    borderBottomColor: '#858483',
-                    fontSize: 25,
-                }} placeholderTextColor='#858483'></TextInput>
-                <TextInput placeholder='Digite sua senha' style={{
-                    borderBottomWidth: 1,
-                    borderBottomColor: '#858483',
-                    fontSize: 25,
-                }} placeholderTextColor='#858483'></TextInput>
+        <Background>
+            <Image source={Logo} style={styles.image} />
+            <KeyboardAvoidingView style={styles.keyboard}>
+                <Input placeholder='Digite seu email' />
+                <Input placeholder='Digite sua senha'  />
 
-                <View style={{ flexDirection: "row" }}>
-                    <Button texto='Login' onPress={() => props.navigation.navigate('Home')} />
-                    <Button texto='Cadastre-se' onPress={() => props.navigation.navigate('Cadastro')} />
-                    <Button texto='Perfil' onPress={() => props.navigation.navigate('Perfil')} />
+                <View style={{ flexDirection: "row", marginBottom: 5 }}>
+                    <Button 
+                        texto='Login' 
+                        style={styles.buttonRight} 
+                        onPress={() => props.navigation.navigate('Home')} />
+                    <Button 
+                        texto='Cadastre-se' 
+                        style={styles.buttonLeft}
+                        onPress={() => props.navigation.navigate('Cadastro')}  />
                 </View>
 
-            </View>
-        </View>
+                <Link text='Perfil' onPress={() => props.navigation.navigate('Perfil')} />
+
+            </KeyboardAvoidingView>
+        </Background>
     );
 }
