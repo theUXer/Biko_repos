@@ -15,8 +15,7 @@ export default function Home(props) {
   return (
     <>
 
-    <TextInput placeholder='    Pesquise aqui...' style={{ borderRadius: 30 , height: 50, width: 390, alignSelf: 'center', backgroundColor: bikoColor.primary }}></TextInput>
-
+    <TextInput placeholder='    Pesquise aqui...' style={{ height: 50, width: 390, alignSelf: 'center' }}></TextInput>
       <ScrollView>
         <Card>
           <CardItem>
