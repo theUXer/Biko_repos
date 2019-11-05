@@ -31,7 +31,7 @@ export default function Login(props) {
                             onPress={() => props.navigation.navigate('Cadastro')} />
                     </View>
 
-                    <Link text='Perfil' onPress={() => props.navigation.navigate('Perfil')} />
+                    {/* <Link text='Perfil' onPress={() => props.navigation.navigate('Perfil')} /> */}
 
                 </KeyboardAvoidingView>
             </View>
