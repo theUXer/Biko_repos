@@ -127,15 +127,21 @@ export default function Cadastro(props) {
                 <Input placeholder='Digite seu CPF' />
                 <Dropdown
                     label="Sexo"
-                    baseColor="#858483"
+                    baseColor="#fff"
                     data={Sexo}
-                    containerStyle={{ width: '80%' }}
+                    textColor='#fff'
+                    selectedItemColor='#000'
+                    itemTextStyle={{ color: '#fff' }}
+                    inputContainerStyle={{ color: '#fff' }}
+                    containerStyle={{ width: '80%', color: '#fff' }}
                     onChangeText={text => setAccountType(text)}
                 />
                 <Dropdown
                     label="Tipo de conta"
-                    baseColor="#858483"
+                    baseColor="#fff"
                     data={data}
+                    textColor='#fff'
+                    selectedItemColor='#000'
                     containerStyle={{ width: '80%' }}
                     onChangeText={text => setAccountType(text)}
                 />
@@ -144,7 +150,9 @@ export default function Cadastro(props) {
                     <Dropdown
                         label="Serviço"
                         data={Serviço}
-                        baseColor="#858483"
+                        textColor='#fff'
+                        selectedItemColor='#000'
+                        baseColor="white"
                         containerStyle={{ width: '80%' }}
                     />
 
