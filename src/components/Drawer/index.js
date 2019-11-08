@@ -15,11 +15,12 @@ export default function Drawer({ navigation }) {
   
   return (
 
-
+    <View style={{ flex: 1, justifyContent: 'space-between', 
+    backgroundColor: '#101056'  }}>
      <View style={{
        
        width: 280,
-       height,
+       
        backgroundColor: '#101056'
      }}>
        <TouchableOpacity style={{ marginTop: 20, width: 280, height: 50, backgroundColor: 'white' }}
@@ -36,12 +37,18 @@ export default function Drawer({ navigation }) {
          </Text>
        </TouchableOpacity>
 
-       <TouchableOpacity style={{ width: 280, height: 50 }}
+       
+     </View>
+
+  
+
+      <TouchableOpacity style={{ width: 280, height: 50 }}
          onPress={() => navigation.navigate('Login')}>
-         <Text style={{ color: 'white', fontSize: 18, paddingLeft: 15, marginTop: 650, textAlign: 'center' }}>
+         <Text style={{ color: 'white', fontSize: 18, paddingLeft: 15, textAlign: 'center' }}>
            Sair
          </Text>
        </TouchableOpacity>
+
      </View>
   );
 }
