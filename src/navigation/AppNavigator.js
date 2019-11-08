@@ -45,7 +45,10 @@ const AppNavigator = createDrawerNavigator({
         }
     },
     Info: {
-        screen: InfoScreen
+        screen: InfoScreen,
+        navigationOptions: {
+            header: null
+        }
     }
 },
 {
