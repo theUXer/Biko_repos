@@ -89,6 +89,8 @@ export default function Perfil(props) {
                 <Input placeholder="Nome completo" />
                 <Input placeholder="Digite seu sobrenome" />
                 <Input placeholder="Descrição" />
+                <Input placeholder='Mude seu email' />
+                <Input placeholder='Altere sua senha' />
                 <View style={{ flexDirection: "row" }}>
                     <Button
                         texto='Salvar'

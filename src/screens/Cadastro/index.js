@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { KeyboardAvoidingView, View, TextInput, TouchableOpacity, Alert, Image, Text } from 'react-native'
+import { KeyboardAvoidingView, View, TextInput, TouchableOpacity, Alert, Image, Text, ScrollView } from 'react-native'
 import { Dropdown } from 'react-native-material-dropdown';
 import styles from './styles'
 
@@ -106,6 +106,7 @@ export default function Cadastro(props) {
     },]
 
     return (
+
         <Background>
             <View style={styles.viewImage}>
                 <Image
@@ -119,12 +120,12 @@ export default function Cadastro(props) {
 
             <KeyboardAvoidingView style={styles.content}>
 
-
                 <Input placeholder='Digite seu nome' />
 
                 <Input placeholder='Digite seu sobrenome' />
 
                 <Input placeholder='Digite seu CPF' />
+
                 <Dropdown
                     label="Sexo"
                     baseColor="#fff"
@@ -136,6 +137,7 @@ export default function Cadastro(props) {
                     containerStyle={{ width: '80%', color: '#fff' }}
                     onChangeText={text => setAccountType(text)}
                 />
+
                 <Dropdown
                     label="Tipo de conta"
                     baseColor="#fff"
@@ -145,6 +147,10 @@ export default function Cadastro(props) {
                     containerStyle={{ width: '80%' }}
                     onChangeText={text => setAccountType(text)}
                 />
+
+                <Input placeholder='Digite um email válido' />
+
+                <Input placeholder='Digite sua senha' />
 
                 {accountType === 'Empregado' && (
                     <Dropdown
@@ -169,5 +175,6 @@ export default function Cadastro(props) {
                 </View>
             </KeyboardAvoidingView>
         </Background>
+
     )
 }

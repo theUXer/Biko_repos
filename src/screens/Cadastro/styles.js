@@ -15,14 +15,14 @@ const styles = StyleSheet.create({
         borderBottomLeftRadius: 0
     },
     content: {
-        flexGrow: 0.5, 
-        width: '100%', 
-        alignItems: 'center', 
+        flexGrow: 0.5,
+        width: '100%',
+        alignItems: 'center',
         justifyContent: 'space-evenly'
     },
     viewImage: {
-        width: 150, 
-        height: 150, 
+        width: 150,
+        height: 150,
         flexDirection: 'row'
     },
     circle: {
