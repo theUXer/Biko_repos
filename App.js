@@ -6,6 +6,8 @@ import { AppLoading } from 'expo'
 import * as Font from 'expo-font'
 import { Ionicons } from '@expo/vector-icons'
 import AppNavigator from './src/navigation/AppNavigator'
+import {DrawerNavigator} from 'react-navigation'
+
 
 export default function App() {
   const [isReady, setIsReady] = useState(false)
@@ -32,4 +34,5 @@ export default function App() {
       <AppNavigator />
     </SafeAreaView>
   );
+
 }

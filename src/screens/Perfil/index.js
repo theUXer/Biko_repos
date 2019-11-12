@@ -68,30 +68,37 @@ export default function Perfil(props) {
             { text: 'Galeria', onPress: () => pickImage() }]
         )
     }
+    let data = [{
+        value: 'Empregado',
+    }, {
+        value: 'Empregador',
+    }]
 
     return (
         <Background>
-            <View style={styles.viewImage}> 
-                <Image 
-                    source={avatar ? { uri: avatar } : perfil } 
+            <View style={styles.viewImage}>
+                <Image
+                    source={avatar ? { uri: avatar } : perfil}
                     style={styles.image}
                 />
                 <TouchableOpacity style={styles.circle} onPress={() => imagem()}>
                     <Plus name='plus' size={20} color='#fff' />
                 </TouchableOpacity>
             </View>
-            <KeyboardAvoidingView style={{ flex: 0.7, width: '100%', alignItems: 'center', justifyContent: 'space-evenly' }}>
+            <KeyboardAvoidingView style={{ flex: 0.7, width: '90%', alignItems: 'center', justifyContent: 'space-evenly' }}>
                 <Input placeholder="Nome completo" />
                 <Input placeholder="Digite seu sobrenome" />
-                <Input placeholder="Mais informações" />
+                <Input placeholder="Descrição" />
+                <Input placeholder='Mude seu email' />
+                <Input placeholder='Altere sua senha' />
                 <View style={{ flexDirection: "row" }}>
-                <Button 
-                    texto='Salvar' 
-                    style={styles.buttonRight}  />
-                <Button 
-                    texto='Voltar'
-                    style={styles.buttonLeft}  
-                    onPress={() => props.navigation.goBack()} />
+                    <Button
+                        texto='Salvar'
+                        style={styles.buttonRight} />
+                    <Button
+                        texto='Voltar'
+                        style={styles.buttonLeft}
+                        onPress={() => props.navigation.goBack()} />
                 </View>
 
             </KeyboardAvoidingView>

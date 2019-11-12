@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { createAppContainer } from 'react-navigation'
+import { createAppContainer, createSwitchNavigator } from 'react-navigation'
 import { createStackNavigator } from 'react-navigation-stack'
 import { createDrawerNavigator } from 'react-navigation-drawer'
 
@@ -9,14 +9,24 @@ import HomeScreen from '../screens/Home'
 import CadastroScreen from '../screens/Cadastro'
 import PerfilScreen from '../screens/Perfil'
 import InfoScreen from '../screens/Info'
+import Drawer from '../components/Drawer'
 
-const AppNavigator = createStackNavigator({
+const LoginNavigator = createStackNavigator({
     Login: {
         screen: LoginScreen,
         navigationOptions: {
             header: null
         }
     },
+    Cadastro: {
+        screen: CadastroScreen,
+        navigationOptions: {
+            header: null
+        }
+    },
+})
+
+const AppNavigator = createDrawerNavigator({
     Home: {
         screen: HomeScreen,
         navigationOptions: { 
@@ -28,12 +38,6 @@ const AppNavigator = createStackNavigator({
             headerTintColor: '#ab0993',
         }
     },
-    Cadastro: {
-        screen: CadastroScreen,
-        navigationOptions: {
-            header: null
-        }
-    },
     Perfil: {
         screen: PerfilScreen,
         navigationOptions: {
@@ -41,13 +45,19 @@ const AppNavigator = createStackNavigator({
         }
     },
     Info: {
-        screen: InfoScreen
+        screen: InfoScreen,
+        navigationOptions: {
+            header: null
+        }
     }
 },
 {
-  initialRouteName: 'Login'
-}
-    
-)
+  contentComponent: Drawer
+})
 
-export default createAppContainer(AppNavigator)
+const Switch = createSwitchNavigator({
+    LoginStack: LoginNavigator,
+    App: AppNavigator
+})
+
+export default createAppContainer(Switch)

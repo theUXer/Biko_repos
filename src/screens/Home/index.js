@@ -1,18 +1,24 @@
-import React, {useState} from 'react';
+import React, { useState, Component } from 'react';
 import styles from './styles';
 
 import { Image, TouchableOpacity, ScrollView } from 'react-native';
 
 import { bikoColor } from '../../helpers/Colors'
 
-import { Card, CardItem, Thumbnail, Text, Button, Icon, Left, Body, Right } from 'native-base';
+import { Card, CardItem, Thumbnail, Text, Button, Icon, Left, Body, Right, Input, } from 'native-base';
 
 import { Baba, Bebe, Carro, Eletricista, Emerson, Joao, Predio, Zuleika } from '../../helpers/Images'
+import { TextInput } from 'react-native-gesture-handler';
+import { Background } from '../../components/Background';
+
 
 export default function Home(props) {
-  
   return (
+
+
+
     <>
+      <TextInput placeholder='    Pesquise aqui...' style={{ height: 50, width: 390, alignSelf: 'center' }}></TextInput>
       <ScrollView>
         <Card>
           <CardItem>
@@ -30,7 +36,7 @@ export default function Home(props) {
           <CardItem>
             <Left>
               <Button transparent>
-                <Icon active name="thumbs-up" style={{ color: bikoColor.primary}} />
+                <Icon active name="thumbs-up" style={{ color: bikoColor.primary }} />
                 <Text style={styles.text}>53 Likes</Text>
               </Button>
             </Left>
@@ -108,13 +114,13 @@ export default function Home(props) {
             </Left>
             <Body>
               <Button transparent>
-                <Icon active name="chatbubbles" style={{ color:  bikoColor.primary }} />
+                <Icon active name="chatbubbles" style={{ color: bikoColor.primary }} />
                 <Text style={styles.text}>Contact</Text>
               </Button>
             </Body>
             <Right>
               <Button transparent>
-                <Icon active name="heart" style={{ color:  bikoColor.primary }} />
+                <Icon active name="heart" style={{ color: bikoColor.primary }} />
                 <Text style={styles.text}>Favorite</Text>
               </Button>
             </Right>
@@ -138,27 +144,28 @@ export default function Home(props) {
           <CardItem>
             <Left>
               <Button transparent >
-                <Icon active name="thumbs-up" style={{ color:  bikoColor.primary }} />
+                <Icon active name="thumbs-up" style={{ color: bikoColor.primary }} />
                 <Text style={styles.text}>81 Likes</Text>
               </Button>
             </Left>
             <Body>
               <Button transparent>
-                <Icon active name="chatbubbles" style={{ color:  bikoColor.primary }} />
+                <Icon active name="chatbubbles" style={{ color: bikoColor.primary }} />
                 <Text style={styles.text}>Contact</Text>
               </Button>
             </Body>
             <Right>
               <Button transparent>
-                <Icon active name="heart" style={{ color:  bikoColor.primary }} />
+                <Icon active name="heart" style={{ color: bikoColor.primary }} />
                 <Text style={styles.text}>Favorite</Text>
               </Button>
             </Right>
           </CardItem>
         </Card>
       </ScrollView>
-
     </>
+
+
 
   );
 }
