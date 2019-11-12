@@ -3,7 +3,7 @@ import { KeyboardAvoidingView, View, TextInput } from 'react-native'
 
 import styles from './styles'
 
-import Background from '../../components/Background'
+import { Background } from '../../components/Background'
 import Button from '../../components/Button'
 import Input from '../../components/Input'
 
