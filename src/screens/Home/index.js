@@ -1,24 +1,21 @@
 import React, { useState, Component } from 'react';
-import styles from './styles';
+import { Comments, Search, Button, Image } from './styles';
 
-import { Image, TouchableOpacity, ScrollView } from 'react-native';
+import { ScrollView } from 'react-native';
 
 import { bikoColor } from '../../helpers/Colors'
 
-import { Card, CardItem, Thumbnail, Text, Button, Icon, Left, Body, Right, Input, } from 'native-base';
+import { Card, CardItem, Thumbnail, Text, Icon, Left, Body, Input } from 'native-base';
 
 import { Baba, Bebe, Carro, Eletricista, Emerson, Joao, Predio, Zuleika } from '../../helpers/Images'
-import { TextInput } from 'react-native-gesture-handler';
+
 import { Background } from '../../components/Background';
 
 
 export default function Home(props) {
   return (
-
-
-
     <>
-      <TextInput placeholder='    Pesquise aqui...' style={{ height: 50, width: 390, alignSelf: 'center' }}></TextInput>
+      <Search placeholder='Pesquise aqui...' />
       <ScrollView>
         <Card>
           <CardItem>
@@ -31,27 +28,21 @@ export default function Home(props) {
             </Left>
           </CardItem>
           <CardItem cardBody>
-            <Image source={Carro} style={{ height: 200, width: null, flex: 1 }} />
+            <Image source={Carro} />
           </CardItem>
           <CardItem>
-            <Left>
-              <Button transparent>
-                <Icon active name="thumbs-up" style={{ color: bikoColor.primary }} />
-                <Text style={styles.text}>53 Likes</Text>
-              </Button>
-            </Left>
-            <Body>
-              <Button transparent>
-                <Icon active name="chatbubbles" style={{ color: bikoColor.primary }} />
-                <Text style={styles.text}>Contact</Text>
-              </Button>
-            </Body>
-            <Right>
-              <Button transparent>
-                <Icon active name="heart" style={{ color: bikoColor.primary }} />
-                <Text style={styles.text}>Favorite</Text>
-              </Button>
-            </Right>
+            <Button>
+              <Icon active name="thumbs-up" style={{ color: bikoColor.primary }} />
+              <Comments>53 Likes</Comments>
+            </Button>
+            <Button>
+              <Icon active name="chatbubbles" style={{ color: bikoColor.primary }} />
+              <Comments>Contact</Comments>
+            </Button>
+            <Button>
+              <Icon active name="heart" style={{ color: bikoColor.primary }} />
+              <Comments>Favorite</Comments>
+            </Button>
           </CardItem>
         </Card>
 
@@ -67,27 +58,21 @@ export default function Home(props) {
             </Left>
           </CardItem>
           <CardItem cardBody>
-            <Image source={Bebe} style={{ height: 200, width: null, flex: 1 }} />
+            <Image source={Bebe} />
           </CardItem>
           <CardItem>
-            <Left>
-              <Button transparent>
-                <Icon active name="thumbs-up" style={{ color: bikoColor.primary }} />
-                <Text style={styles.text}>12 Likes</Text>
-              </Button>
-            </Left>
-            <Body>
-              <Button transparent>
-                <Icon active name="chatbubbles" style={{ color: bikoColor.primary }} />
-                <Text style={styles.text}>Contact</Text>
-              </Button>
-            </Body>
-            <Right>
-              <Button transparent>
-                <Icon active name="heart" style={{ color: bikoColor.primary }} />
-                <Text style={styles.text}>Favorite</Text>
-              </Button>
-            </Right>
+            <Button>
+              <Icon active name="thumbs-up" style={{ color: bikoColor.primary }} />
+              <Comments>53 Likes</Comments>
+            </Button>
+            <Button>
+              <Icon active name="chatbubbles" style={{ color: bikoColor.primary }} />
+              <Comments>Contact</Comments>
+            </Button>
+            <Button>
+              <Icon active name="heart" style={{ color: bikoColor.primary }} />
+              <Comments>Favorite</Comments>
+            </Button>
           </CardItem>
         </Card>
 
@@ -103,27 +88,21 @@ export default function Home(props) {
             </Left>
           </CardItem>
           <CardItem cardBody>
-            <Image source={Eletricista} style={{ height: 200, width: null, flex: 1 }} />
+            <Image source={Eletricista} />
           </CardItem>
           <CardItem>
-            <Left>
-              <Button transparent >
-                <Icon active name="thumbs-up" style={{ color: bikoColor.primary }} />
-                <Text style={styles.text}>103 Likes</Text>
-              </Button>
-            </Left>
-            <Body>
-              <Button transparent>
-                <Icon active name="chatbubbles" style={{ color: bikoColor.primary }} />
-                <Text style={styles.text}>Contact</Text>
-              </Button>
-            </Body>
-            <Right>
-              <Button transparent>
-                <Icon active name="heart" style={{ color: bikoColor.primary }} />
-                <Text style={styles.text}>Favorite</Text>
-              </Button>
-            </Right>
+            <Button>
+              <Icon active name="thumbs-up" style={{ color: bikoColor.primary }} />
+              <Comments>53 Likes</Comments>
+            </Button>
+            <Button>
+              <Icon active name="chatbubbles" style={{ color: bikoColor.primary }} />
+              <Comments>Contact</Comments>
+            </Button>
+            <Button>
+              <Icon active name="heart" style={{ color: bikoColor.primary }} />
+              <Comments>Favorite</Comments>
+            </Button>
           </CardItem>
         </Card>
 
@@ -139,27 +118,21 @@ export default function Home(props) {
             </Left>
           </CardItem>
           <CardItem cardBody>
-            <Image source={Predio} style={{ height: 200, width: null, flex: 1 }} />
+            <Image source={Predio} />
           </CardItem>
           <CardItem>
-            <Left>
-              <Button transparent >
-                <Icon active name="thumbs-up" style={{ color: bikoColor.primary }} />
-                <Text style={styles.text}>81 Likes</Text>
-              </Button>
-            </Left>
-            <Body>
-              <Button transparent>
-                <Icon active name="chatbubbles" style={{ color: bikoColor.primary }} />
-                <Text style={styles.text}>Contact</Text>
-              </Button>
-            </Body>
-            <Right>
-              <Button transparent>
-                <Icon active name="heart" style={{ color: bikoColor.primary }} />
-                <Text style={styles.text}>Favorite</Text>
-              </Button>
-            </Right>
+            <Button>
+              <Icon active name="thumbs-up" style={{ color: bikoColor.primary }} />
+              <Comments>53 Likes</Comments>
+            </Button>
+            <Button>
+              <Icon active name="chatbubbles" style={{ color: bikoColor.primary }} />
+              <Comments>Contact</Comments>
+            </Button>
+            <Button>
+              <Icon active name="heart" style={{ color: bikoColor.primary }} />
+              <Comments>Favorite</Comments>
+            </Button>
           </CardItem>
         </Card>
       </ScrollView>
