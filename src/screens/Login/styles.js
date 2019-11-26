@@ -1,5 +1,3 @@
-import { StyleSheet } from 'react-native'
-import { bikoColor } from '../../helpers/Colors'
 import styled from 'styled-components/native'
 
 export const Container = styled.KeyboardAvoidingView` 
@@ -19,16 +17,3 @@ export const Image = styled.Image`
     height: 200px;
     border-radius: 100px;
 `
-
-const styles = StyleSheet.create({
-    buttonRight: {
-        borderTopRightRadius: 0,
-        borderBottomRightRadius: 0
-    },
-    buttonLeft: {
-        borderTopLeftRadius: 0,
-        borderBottomLeftRadius: 0
-    }
-})
-
-export default styles

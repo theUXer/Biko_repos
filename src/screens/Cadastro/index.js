@@ -1,18 +1,15 @@
-import React, { useState, useEffect } from 'react';
-import { KeyboardAvoidingView, View, TextInput, TouchableOpacity, Alert, Image, Text, ScrollView } from 'react-native'
-import { Dropdown } from 'react-native-material-dropdown';
-import styles from './styles'
+import React, { useState, useEffect } from 'react'
+import { Alert } from 'react-native'
+import { Keyboard, Row } from './styles'
 
-import { Background } from '../../components/Background'
+import Background from '../../components/Background'
+import ImageInput from '../../components/ImageInput'
+import Dropdown from '../../components/Dropdown'
 import Button from '../../components/Button'
 import Input from '../../components/Input'
-
 import Constants from 'expo-constants'
 import * as Permissions from 'expo-permissions';
 import * as ImagePicker from 'expo-image-picker';
-
-import Plus from 'react-native-vector-icons/Feather'
-import perfil from '../../assets/perfil.jpg'
 
 export default function Cadastro(props) {
     const [avatar, setAvatar] = useState('')
@@ -64,61 +61,45 @@ export default function Cadastro(props) {
         Alert.alert(
             'Mensagem',
             'Você deseja utilizar a câmera ou a galeria?',
-            [{ text: 'Excluir', onPress: () => deletePick() },
+            [
+            { text: 'Excluir', onPress: () => deletePick() },
             { text: 'Câmera', onPress: () => pickImageWithCamera() },
             { text: 'Galeria', onPress: () => pickImage() }]
         )
     }
-    let data = [{
-        value: 'Empregado',
-    }, {
-        value: 'Empregador',
-    }]
+    let data = [
+        { value: 'Empregado'}, 
+        { value: 'Empregador' }
+    ]
 
-    let Sexo = [{
-        value: 'Masculino',
-    }, {
-        value: 'Feminino',
-    }, {
-        value: 'Outro'
-    }, {
-        value: 'Prefiro não informar'
-    }]
+    let Sexo = [
+        { value: 'Masculino' }, 
+        { value: 'Feminino' }, 
+        { value: 'Outro' }, 
+        { value: 'Prefiro não informar' }
+    ]
 
-    let Serviço = [{
-        value: 'Babá',
-    }, {
-        value: 'Eletricista ',
-    }, {
-        value: 'Limpador(a) de piscina',
-    }, {
-        value: 'Motorista'
-    }, {
-        value: 'Empreiteiro(a) ',
-    }, {
-        value: 'Pintor(a) ',
-    }, {
-        value: 'Encanador(a)',
-    }, {
-        value: 'Mecânico(a) ',
-    }, {
-        value: 'Faxineiro(a)',
-    },]
+    let Serviço = [
+        { value: 'Babá' }, 
+        { value: 'Eletricista' }, 
+        { value: 'Limpador(a) de piscina' }, 
+        { value: 'Motorista' }, 
+        { value: 'Empreiteiro(a)' },
+        { value: 'Pintor(a)' }, 
+        { value: 'Encanador(a)' }, 
+        { value: 'Mecânico(a)' }, 
+        { value: 'Faxineiro(a)' },
+    ]
 
     return (
 
         <Background>
-            <View style={styles.viewImage}>
-                <Image
-                    source={avatar ? { uri: avatar } : perfil}
-                    style={styles.image}
-                />
-                <TouchableOpacity style={styles.circle} onPress={() => imagem()}>
-                    <Plus name='plus' size={20} color='#fff' />
-                </TouchableOpacity>
-            </View>
+            <ImageInput
+                onPress={() => imagem()}
+                source={avatar && { uri: avatar }}
+            />
 
-            <KeyboardAvoidingView style={styles.content}>
+            <Keyboard>
 
                 <Input placeholder='Digite seu nome' />
 
@@ -127,24 +108,14 @@ export default function Cadastro(props) {
                 <Input placeholder='Digite seu CPF' />
 
                 <Dropdown
-                    label="Sexo"
-                    baseColor="#fff"
                     data={Sexo}
-                    textColor='#fff'
-                    selectedItemColor='#000'
-                    itemTextStyle={{ color: '#fff' }}
-                    inputContainerStyle={{ color: '#fff' }}
-                    containerStyle={{ width: '80%', color: '#fff' }}
+                    label='Sexo'
                     onChangeText={text => setAccountType(text)}
                 />
 
                 <Dropdown
-                    label="Tipo de conta"
-                    baseColor="#fff"
                     data={data}
-                    textColor='#fff'
-                    selectedItemColor='#000'
-                    containerStyle={{ width: '80%' }}
+                    label='Tipo de conta'
                     onChangeText={text => setAccountType(text)}
                 />
 
@@ -154,26 +125,18 @@ export default function Cadastro(props) {
 
                 {accountType === 'Empregado' && (
                     <Dropdown
-                        label="Serviço"
                         data={Serviço}
-                        textColor='#fff'
-                        selectedItemColor='#000'
-                        baseColor="white"
-                        containerStyle={{ width: '80%' }}
+                        label='Serviço'
                     />
-
                 )}
 
-                <View style={{ flexDirection: "row" }}>
+                <Row>
+                    <Button right text='Cadastrar' />
                     <Button
-                        texto='Cadastrar'
-                        style={styles.buttonRight} />
-                    <Button
-                        texto='Voltar'
-                        style={styles.buttonLeft}
+                        left text='Voltar'
                         onPress={() => props.navigation.goBack()} />
-                </View>
-            </KeyboardAvoidingView>
+                </Row>
+            </Keyboard>
         </Background>
 
     )

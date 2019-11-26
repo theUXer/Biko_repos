@@ -1,6 +1,11 @@
 import React from 'react'
-import { Text } from 'react-native'
+import { bikoColor } from '../../helpers/Colors'
+import styled from 'styled-components/native'
 
-export default function Link(props) {
-    return <Text style={{ color: '#ab0993', textDecorationLine: "underline", fontSize: 20 }} onPress={props.onPress}>{props.text}</Text>
-}
+const Link = styled.Text`
+    font-size: 20px;
+    color: ${bikoColor.primary};
+    text-decoration-line: underline;
+`
+
+export default Link

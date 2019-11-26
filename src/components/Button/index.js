@@ -1,21 +1,14 @@
 import React from 'react'
-import { TouchableOpacity, Text } from 'react-native'
-import { bikoColor } from '../../helpers/Colors'
+import { Touchable, Text } from './styles'
 
-export default function Button(props) {
+export default function Button({ style, right, left, onPress, text }) {
     return (
-        <TouchableOpacity
-            style={[{
-                borderRadius: 50,
-                width: 100,
-                height: 50,
-                marginLeft: 5,
-                justifyContent: 'center',
-                alignItems: 'center',
-                backgroundColor: bikoColor.primary
-            }, props.style]}
-            onPress={props.onPress}>
-            <Text style={{ color: '#fff' }}>{props.texto}</Text>
-        </TouchableOpacity>
+        <Touchable 
+            right={right} 
+            left={left} 
+            style={style} 
+            onPress={onPress}>
+            <Text>{text}</Text>
+        </Touchable>
     )
 }

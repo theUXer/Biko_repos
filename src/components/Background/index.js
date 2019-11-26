@@ -1,9 +1,14 @@
 import React from 'react'
 import styled from 'styled-components/native'
+import { bikoColor } from '../../helpers/Colors'
 
-export const Background = styled.ImageBackground`
+const Background = styled.ImageBackground.attrs({
+    resizeMode: 'cover'
+})`
     flex: 1;
     align-items: center;
-    background-color: #101056;
     justify-content: center;
+    background-color: ${props => props.color || bikoColor.secondary};
 `
+
+export default Background

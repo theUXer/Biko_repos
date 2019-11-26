@@ -1,34 +1,45 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { KeyboardAvoidingView, View } from 'react-native';
 
-import { Background } from '../../components/Background'
+import Background from '../../components/Background'
 import Button from '../../components/Button'
 import Input from '../../components/Input'
 import Link from '../../components/Link'
+
 import { Logo, Bg } from '../../helpers/Images'
 
-import styles, { Container, Row, Image } from './styles'
+import { Container, Row, Image } from './styles'
 
 export default function Login(props) {
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
+
     return (
-        <Background source={Bg} resizeMode='cover'>
+        <Background source={Bg}>
             <Image source={Logo} />
 
             <Container>
-                <Input color='white' placeholder='Digite seu email' />
-                <Input color='white' placeholder='Digite sua senha' />
+                <Input 
+                    placeholder='Digite seu email' 
+                    onChange={text => setEmail(text.trim())} />
+
+                <Input 
+                    secureTextEntry
+                    placeholder='Digite sua senha' 
+                    onChange={text => setPassword(text.trim())} />
                 
                 <Row>
                     <Button
-                        texto='Login'
-                        style={styles.buttonRight}
+                        right text='Login'
                         onPress={() => props.navigation.navigate('Home')} />
                     <Button
-                        texto='Cadastre-se'
-                        style={styles.buttonLeft}
+                        left text='Cadastre-se'
                         onPress={() => props.navigation.navigate('Cadastro')} />
                 </Row>
-                {/* <Link text='Perfil' onPress={() => props.navigation.navigate('Perfil')} /> */}
+
+                <Link onPress={() => props.navigation.navigate('Perfil')}>
+                    Esqueci a senha
+                </Link>
             </Container>
         </Background>
     );

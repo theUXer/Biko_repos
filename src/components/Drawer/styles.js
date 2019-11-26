@@ -14,7 +14,6 @@ export const Button = styled.TouchableOpacity`
     align-self: center;
     align-items: center;
     justify-content: center;
-    background-color: ${bikoColor.primary};
 `
 
 export const Line = styled.View`

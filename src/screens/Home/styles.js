@@ -1,5 +1,15 @@
+
+import { Dimensions } from 'react-native'
 import styled from 'styled-components/native'
 import { bikoColor } from '../../helpers/Colors'
+
+const { width } = Dimensions.get('screen')
+
+export const ScrollView = styled.ScrollView.attrs({
+    contentContainerStyle:{
+        flexGrow: 1, width
+    }
+})``
 
 export const Comments = styled.Text`
     font-size: 13px;

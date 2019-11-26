@@ -1,20 +1,19 @@
-import React, { useState, Component } from 'react';
-import { Comments, Search, Button, Image } from './styles';
-
-import { ScrollView } from 'react-native';
+import React, { useState, Component } from 'react'
+import { ScrollView, Comments, Search, Button, Image } from './styles'
 
 import { bikoColor } from '../../helpers/Colors'
 
-import { Card, CardItem, Thumbnail, Text, Icon, Left, Body, Input } from 'native-base';
+import { Card, CardItem, Thumbnail, Text, Icon, Left, Body, Input } from 'native-base'
 
 import { Baba, Bebe, Carro, Eletricista, Emerson, Joao, Predio, Zuleika } from '../../helpers/Images'
 
-import { Background } from '../../components/Background';
-
+import Background from '../../components/Background'
+import Header from '../../components/Header'
 
 export default function Home(props) {
   return (
-    <>
+    <Background color={bikoColor.white}>
+      
       <Search placeholder='Pesquise aqui...' />
       <ScrollView>
         <Card>
@@ -136,9 +135,7 @@ export default function Home(props) {
           </CardItem>
         </Card>
       </ScrollView>
-    </>
-
-
+    </ Background>
 
   );
 }

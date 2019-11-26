@@ -1,18 +1,16 @@
 import React, { useState, useEffect } from 'react';
-import { KeyboardAvoidingView, View, TouchableOpacity, TextInput, Alert, Image, Text } from 'react-native';
+import { View, Alert } from 'react-native';
 
-import styles from './styes'
+import { Keyboard, Row } from './styes'
 
-import { Background } from '../../components/Background'
+import Background from '../../components/Background'
+import ImageInput from '../../components/ImageInput'
 import Button from '../../components/Button'
 import Input from '../../components/Input'
 
 import Constants from 'expo-constants'
 import * as Permissions from 'expo-permissions';
 import * as ImagePicker from 'expo-image-picker';
-
-import Plus from 'react-native-vector-icons/Feather'
-import perfil from '../../assets/perfil.jpg'
 
 export default function Perfil(props) {
     const [avatar, setAvatar] = useState('')
@@ -76,32 +74,28 @@ export default function Perfil(props) {
 
     return (
         <Background>
-            <View style={styles.viewImage}>
-                <Image
-                    source={avatar ? { uri: avatar } : perfil}
-                    style={styles.image}
-                />
-                <TouchableOpacity style={styles.circle} onPress={() => imagem()}>
-                    <Plus name='plus' size={20} color='#fff' />
-                </TouchableOpacity>
-            </View>
-            <KeyboardAvoidingView style={{ flex: 0.7, width: '90%', alignItems: 'center', justifyContent: 'space-evenly' }}>
+            <ImageInput
+                onPress={() => imagem()}
+                source={avatar && { uri: avatar }}
+            />
+            <Keyboard>
                 <Input placeholder="Nome completo" />
                 <Input placeholder="Digite seu sobrenome" />
                 <Input placeholder="Descrição" />
                 <Input placeholder='Mude seu email' />
                 <Input placeholder='Altere sua senha' />
-                <View style={{ flexDirection: "row" }}>
-                    <Button
-                        texto='Salvar'
-                        style={styles.buttonRight} />
-                    <Button
-                        texto='Voltar'
-                        style={styles.buttonLeft}
-                        onPress={() => props.navigation.goBack()} />
-                </View>
 
-            </KeyboardAvoidingView>
+                <Row>
+                    <Button
+                        right
+                        text='Salvar' />
+                    <Button
+                        left
+                        text='Voltar'
+                        onPress={() => props.navigation.goBack()} />
+                </Row>
+
+            </Keyboard>
         </Background>
     )
 }

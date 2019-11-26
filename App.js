@@ -1,13 +1,18 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react'
+import styled from 'styled-components/native'
 
 /* ------------- Native Components ------------- */
-import { SafeAreaView, StyleSheet } from 'react-native'
+import { getStatusBarHeight } from 'react-native-iphone-x-helper'
+import { StatusBar } from 'react-native'
+
+/* ------------- App ------------- */
+import AppNavigator from './src/routes/AppNavigator'
+import { bikoColor } from './src/helpers/Colors'
+
+/* ------------- Expo ------------- */
+import { Ionicons } from '@expo/vector-icons'
 import { AppLoading } from 'expo'
 import * as Font from 'expo-font'
-import { Ionicons } from '@expo/vector-icons'
-import AppNavigator from './src/navigation/AppNavigator'
-import {DrawerNavigator} from 'react-navigation'
-
 
 export default function App() {
   const [isReady, setIsReady] = useState(false)
@@ -30,9 +35,16 @@ export default function App() {
   }
 
   return (
-    <SafeAreaView style={{ flex: 1}}>
-      <AppNavigator />
-    </SafeAreaView>
-  );
-
+    <>
+      <StatusBar translucent />
+      <Container>
+        <AppNavigator />
+      </Container>
+    </>
+  )
 }
+
+const Container = styled.SafeAreaView`
+  flex: 1;
+  margin-top: ${getStatusBarHeight()}px;
+`
