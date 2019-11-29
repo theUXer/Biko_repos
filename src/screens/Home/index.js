@@ -18,15 +18,17 @@ export default function Home(props) {
       <Search placeholder='Pesquise aqui...' />
       <ScrollView>
         <Card>
-          <CardItem>
-            <Left>
-              <Thumbnail source={Zuleika} />
-              <Body>
-                <Text>Zuleika</Text>
-                <Text note>Motorista</Text>
-              </Body>
-            </Left>
-          </CardItem>
+          <Button>
+            <CardItem>
+              <Left>
+                <Thumbnail source={Zuleika} />
+                <Body>
+                  <Text>Zuleika</Text>
+                  <Text note>Motorista</Text>
+                </Body>
+              </Left>
+            </CardItem>
+          </Button>
           <CardItem cardBody>
             <Image source={Carro} />
           </CardItem>
@@ -48,15 +50,17 @@ export default function Home(props) {
 
 
         <Card>
-          <CardItem>
-            <Left>
-              <Thumbnail source={Baba} />
-              <Body>
-                <Text>Maria Luiza</Text>
-                <Text note>Babá</Text>
-              </Body>
-            </Left>
-          </CardItem>
+          <Button>
+            <CardItem>
+              <Left>
+                <Thumbnail source={Baba} />
+                <Body>
+                  <Text>Maria Luiza</Text>
+                  <Text note>Babá</Text>
+                </Body>
+              </Left>
+            </CardItem>
+          </Button>
           <CardItem cardBody>
             <Image source={Bebe} />
           </CardItem>
@@ -78,15 +82,17 @@ export default function Home(props) {
 
 
         <Card>
-          <CardItem>
-            <Left>
-              <Thumbnail source={Joao} />
-              <Body>
-                <Text>João Carlos</Text>
-                <Text note>Eletricista</Text>
-              </Body>
-            </Left>
-          </CardItem>
+          <Button>
+            <CardItem>
+              <Left>
+                <Thumbnail source={Joao} />
+                <Body>
+                  <Text>João Carlos</Text>
+                  <Text note>Eletricista</Text>
+                </Body>
+              </Left>
+            </CardItem>
+          </Button>
           <CardItem cardBody>
             <Image source={Eletricista} />
           </CardItem>
@@ -108,15 +114,17 @@ export default function Home(props) {
 
 
         <Card>
-          <CardItem>
-            <Left>
-              <Thumbnail source={Emerson} />
-              <Body>
-                <Text>Emerson Silveira</Text>
-                <Text note>Empreiteiro</Text>
-              </Body>
-            </Left>
-          </CardItem>
+          <Button>
+            <CardItem>
+              <Left>
+                <Thumbnail source={Emerson} />
+                <Body>
+                  <Text>Emerson Silveira</Text>
+                  <Text note>Empreiteiro</Text>
+                </Body>
+              </Left>
+            </CardItem>
+          </Button>
           <CardItem cardBody>
             <Image source={Predio} />
           </CardItem>
