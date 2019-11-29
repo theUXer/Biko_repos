@@ -11,3 +11,10 @@ export const Predio = require('../../assets/predio.jpg')
 export const Splash = require('../../assets/splash.png')
 export const Zuleika = require('../../assets/zuleika.jpg')
 export const Bg = require('../../assets/background.jpg')
+
+
+
+export const Banner1 = require('../../assets/01.jpg')
+
+
+export const Banner3 = require('../../assets/03.jpg')

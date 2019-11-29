@@ -2,10 +2,16 @@ import React from 'react';
 import Carousel from 'react-native-banner-carousel';
 import { StyleSheet, Image, View, Dimensions } from 'react-native';
 
+import { Banner1, Banner2, Banner3 } from '../../helpers/Images'
+
+
 const BannerWidth = Dimensions.get('window').width;
 const BannerHeight = 260;
 
 const images = [
+    Banner1,
+    Banner2,
+    Banner3
 ];
 
 export default class App extends React.Component {

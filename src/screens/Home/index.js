@@ -1,22 +1,47 @@
 import React, { useState, Component } from 'react';
 import { Comments, Search, Button, Image } from './styles';
 
-import { ScrollView } from 'react-native';
+import { ScrollView, StyleSheet, View, Dimensions } from 'react-native';
 
 import { bikoColor } from '../../helpers/Colors'
 
 import { Card, CardItem, Thumbnail, Text, Icon, Left, Body, Input } from 'native-base';
 
-import { Baba, Bebe, Carro, Eletricista, Emerson, Joao, Predio, Zuleika } from '../../helpers/Images'
+import { Baba, Bebe, Carro, Eletricista, Emerson, Joao, Predio, Zuleika, Banner1, Banner3 } from '../../helpers/Images'
 
 import { Background } from '../../components/Background';
 
+import Carousel from 'react-native-banner-carousel'
+
+
+
 
 export default function Home(props) {
+  let banners = [
+    Banner1,
+    Banner3,
+  ]
+
   return (
     <>
       <Search placeholder='Pesquise aqui...' />
       <ScrollView>
+        <Carousel
+          autoplay
+          autoplayTimeout={5000}
+          loop
+          index={0}
+          pageSize={Dimensions.get('window').width}
+        >
+          {banners.map(banner => (
+            <>
+              <Image source={banner}></Image>
+            </>
+          ))}
+        </Carousel>
+
+
+
         <Card>
           <Button>
             <CardItem>
