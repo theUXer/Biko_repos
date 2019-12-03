@@ -28,7 +28,7 @@ export default function Home(props) {
       <ScrollView>
         <Carousel
           autoplay
-          autoplayTimeout={5000}
+          autoplayTimeout={3000}
           loop
           index={0}
           pageSize={Dimensions.get('window').width}
